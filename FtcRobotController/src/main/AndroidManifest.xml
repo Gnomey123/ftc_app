@@ -2,8 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
           package="com.qualcomm.ftcrobotcontroller"
+<<<<<<< HEAD
+<<<<<<< HEAD
+          android:versionCode="31"
+          android:versionName="4.3">
+=======
           android:versionCode="28"
           android:versionName="4.0">
+>>>>>>> parent of 58d723a... v4.1 changes.
+=======
+          android:versionCode="28"
+          android:versionName="4.0">
+>>>>>>> parent of 58d723a... v4.1 changes.
 
   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
@@ -17,6 +27,7 @@
     <!-- The main robot controller activity -->
     <activity
       android:name="org.firstinspires.ftc.robotcontroller.internal.FtcRobotControllerActivity"
+      android:screenOrientation="fullUser"
       android:configChanges="orientation|screenSize"
       android:label="@string/app_name"
       android:launchMode="singleTask" >
