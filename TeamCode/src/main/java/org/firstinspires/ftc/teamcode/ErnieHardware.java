@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.hardware.motors.RevRoboticsCoreHexMotor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -14,6 +15,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 public class ErnieHardware {
     public DcMotor leftDrive = null;
     public DcMotor rightDrive = null;
+    public RevRoboticsCoreHexMotor extend = null;
 
     HardwareMap hwMap = null;
     private ElapsedTime period  = new ElapsedTime();
@@ -25,7 +27,7 @@ public class ErnieHardware {
     public void init(HardwareMap ahwMap){
         hwMap = ahwMap;
 
-        leftDrive  = hwMap.get(DcMotor.class, "left_drive");
+        /* leftDrive  = hwMap.get(DcMotor.class, "left_drive");
         rightDrive = hwMap.get(DcMotor.class, "right_drive");
 
         leftDrive.setPower(0);
@@ -38,5 +40,10 @@ public class ErnieHardware {
         // May want to use RUN_USING_ENCODERS if encoders are installed.
         leftDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         rightDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        */
+
+        extend = hwMap.get(RevRoboticsCoreHexMotor.class, "extend");
+
+
     }
 }
