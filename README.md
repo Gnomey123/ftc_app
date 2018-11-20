@@ -1,5 +1,6 @@
 
 
+<<<<<<< HEAD
 <div align="center">
     <img src="https://i.imgur.com/bMAmxfZ.png" width="100%"/>
     <br></br>
@@ -137,6 +138,133 @@ and resync the project.
  - Cleaner Params
  - Moved Downscaling to DogeCVDetector Class
  - Updated to EnderCV 2.0 (Modfied)
+=======
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://github.com/ftctechnh/ftc_app/wiki
+
+Note that the wiki is an "evergreen" document that is constantly being updated and edited.  It contains the most current information about the *FIRST* Tech Challenge software and control system.
+
+## Downloading the Project
+It is important to note that this repository is large and can take a long time and use a lot of space to download. If you would like to save time and space, there are some options that you can choose to download only the most current version of the Android project folder:
+
+* If you are a git user, *FIRST* recommends that you use the --depth command line argument to only clone the most current version of the repository:
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git clone --depth=1 https://github.com/ftctechnh/ftc_app.git</p>
+
+* Or, if you prefer, you can use the "Download Zip" button available through the main repository page.  Downloading the project as a .ZIP file will keep the size of the download manageable.
+
+* You can also download the project folder (as a .zip or .tar.gz archive file) from the Downloads subsection of the Releases page for this repository.
+
+Once you have downloaded and uncompressed (if needed) your folder, you can use Android Studio to import the folder  ("Import project (Eclipse ADT, Gradle, etc.)").
+
+## Getting Help
+### User Documentation and Tutorials
+*FIRST* maintains an online wiki with information and tutorials on how to use the *FIRST* Tech Challenge software and robot control system.  You can access the wiki at the following address:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://github.com/ftctechnh/ftc_app/wiki
+
+### Javadoc Reference Material
+The Javadoc reference documentation for the FTC SDK is now available online.  Visit the following URL to view the FTC SDK documentation as a live website:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://ftctechnh.github.io/ftc_app/doc/javadoc/index.html    
+
+Documentation for the FTC SDK is also included with this repository.  There is a subfolder called "doc" which contains several subfolders:
+
+ * The folder "apk" contains the .apk files for the FTC Driver Station and FTC Robot Controller apps.
+ * The folder "javadoc" contains the JavaDoc user documentation for the FTC SDK.
+
+### Online User Forum
+For technical questions regarding the SDK, please visit the FTC Technology forum:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://ftcforum.usfirst.org/forumdisplay.php?156-FTC-Technology
+
+**************************************************************************************
+# Release Information
+**************************************************************************************
+
+Version 4.3 (built on 18.10.31)
+ * Includes missing TensorFlow-related libraries and files.
+
+**************************************************************************************
+# Release Information
+**************************************************************************************
+
+Version 4.2 (built on 18.10.30)
+ * Includes fix to avoid deadlock situation with WatchdogMonitor which could result in USB communication errors.
+     - Comm error appeared to require that user disconnect USB cable and restart the Robot Controller app to recover.
+     - robotControllerLog.txt would have error messages that included the words "E RobotCore: lynx xmit lock: #### abandoning lock:"
+ * Includes fix to correctly list the parent module address for a REV Robotics Expansion Hub in a configuration (.xml) file.
+     - Bug in versions 4.0 and 4.1 would incorrect list the address module for a parent REV Robotics device as "1".
+     - If the parent module had a higher address value than the daisy-chained module, then this bug would prevent the Robot Controller from communicating with the downstream Expansion Hub.
+ * Added requirement for ACCESS_COARSE_LOCATION to allow a Driver Station running Android Oreo to scan for Wi-Fi Direct devices.
+ * Added google() repo to build.gradle because aapt2 must be downloaded from the google() repository beginning with version 3.2 of the Android Gradle Plugin.
+     - Important Note: Android Studio users will need to be connected to the Internet the first time build the ftc_app project.
+     - Internet connectivity is required for the first build so the appropriate files can be downloaded from the Google repository.
+     - Users should not need to be connected to the Internet for subsequent builds.
+     - This should also fix buid issue where Android Studio would complain that it "Could not find com.android.tools.lint:lint-gradle:26.1.4" (or similar).
+ * Added support for REV Spark Mini motor controller as part of the configuration menu for a servo/PWM port on the REV Expansion Hub.
+ * Provide examples for playing audio files in an Op Mode.
+ * Block Development Tool Changes
+     - Includes a fix for a problem with the Velocity blocks that were reported in the FTC Technology forum (Blocks Programming subforum).
+     - Change the "Save completed successfully." message to a white color so it will contrast with a green background.
+     - Fixed the "Download image" feature so it will work if there are text blocks in the op mode.    
+ * Introduce support for Google's TensorFlow Lite technology for object detetion for 2018-2019 game.
+     - TensorFlow lite can recognize Gold Mineral and Silver Mineral from 2018-2019 game.
+     - Example Java and Block op modes are included to show how to determine the relative position of the gold block (left, center, right).
+
+**************************************************************************************
+# Release Information
+**************************************************************************************
+
+Version 4.1 (released on 18.09.24)
+
+Changes include:
+ * Fix to prevent crash when deprecated configuration annotations are used.
+ * Change to allow FTC Robot Controller APK to be auto-updated using FIRST Global Control Hub update scripts.
+ * Removed samples for non supported / non legal hardware.
+ * Improvements to Telemetry.addData block with "text" socket.
+ * Updated Blocks sample op mode list to include Rover Ruckus Vuforia example.
+ * Update SDK library version number.
+     
+**************************************************************************************
+# Release Information
+**************************************************************************************
+
+Version 4.0 (released on 18.09.12)
+
+Changes include:
+ * Initial support for UVC compatible cameras 
+    - If UVC camera has a unique serial number, RC will detect and enumerate by serial number.
+    - If UVC camera lacks a unique serial number, RC will only support one camera of that type connected.
+    - Calibration settings for a few cameras are included (see TeamCode/src/main/res/xml/teamwebcamcalibrations.xml for details).
+    - User can upload calibration files from Program and Manage web interface.
+    - UVC cameras seem to draw a fair amount of electrical current from the USB bus.
+         + This does not appear to present any problems for the REV Robotics Control Hub.
+	 + This does seem to create stability problems when using some cameras with an Android phone-based Robot Controller.
+	 + FTC Tech Team is investigating options to mitigate this issue with the phone-based Robot Controllers.
+    - Updated sample Vuforia Navigation and VuMark Op Modes to demonstrate how to use an internal phone-based camera and an external UVC webcam.    
+
+ * Support for improved motor control.
+    - REV Robotics Expansion Hub firmware 1.8 and greater will support a feed forward mechanism for closed loop motor control.
+    - FTC SDK has been modified to support PIDF coefficients (proportional, integral, derivative, and feed forward).
+    - FTC Blocks development tool modified to include PIDF programming blocks.
+    - Deprecated older PID-related methods and variables.
+    - REV's 1.8.x PIDF-related changes provide a more linear and accurate way to control a motor.
+
+ * Wireless
+    - Added 5GHz support for wireless channel changing for those devices that support it.
+        + Tested with Moto G5 and E4 phones.
+	+ Also tested with other (currently non-approved) phones such as Samsung Galaxy S8.
+
+* Improved Expansion Hub firmware update support in Robot Controller app
+    - Changes to make the system more robust during the firmware update process (when performed through Robot Controller app).
+    - User no longer has to disconnect a downstream daisy-chained Expansion Hub when updating an Expansion Hub's firmware.
+        + If user is updating an Expansion Hub's firmware through a USB connection, he/she does not have to disconnect RS485 connection to other Expansion Hubs.
+	+ The user still must use a USB connection to update an Expansion Hub's firmware.
+	+ The user cannot update the Expansion Hub firmware for a downstream device that is daisy chained through an RS485 connection.
+    - If an Expansion Hub accidentally gets "bricked" the Robot Controller app is now more likely to recognize the Hub when it scans the USB bus.
+        + Robot Controller app should be able to detect an Expansion Hub, even if it accidentally was bricked in a previous update attempt.
+	+ Robot Controller app should be able to install the firmware onto the Hub, even if if accidentally was bricked in a previous update attempt.
+>>>>>>> 1df279274ca16aa67ec2b502bafe6eeab3bede7a
  
 **1.1.1 HOTFIX**:
  - Fixed Jewel Detector Blue Filter
