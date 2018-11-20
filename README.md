@@ -181,6 +181,7 @@ For technical questions regarding the SDK, please visit the FTC Technology forum
 # Release Information
 **************************************************************************************
 
+<<<<<<< HEAD
 Version 4.3 (built on 18.10.31)
  * Includes missing TensorFlow-related libraries and files.
 
@@ -229,6 +230,8 @@ Changes include:
 # Release Information
 **************************************************************************************
 
+=======
+>>>>>>> parent of 58d723a... v4.1 changes.
 Version 4.0 (released on 18.09.12)
 
 Changes include:
