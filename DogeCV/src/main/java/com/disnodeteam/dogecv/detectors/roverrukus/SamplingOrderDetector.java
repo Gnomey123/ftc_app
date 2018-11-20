@@ -4,7 +4,10 @@ import android.util.Log;
 
 import com.disnodeteam.dogecv.DogeCV;
 import com.disnodeteam.dogecv.detectors.DogeCVDetector;
+<<<<<<< HEAD
+=======
 //import com.disnodeteam.dogecv.filters.AsyncFilterRunner;
+>>>>>>> da1029d9ca620d22ef9daf5f4bcf03710161bec8
 import com.disnodeteam.dogecv.filters.DogeCVColorFilter;
 import com.disnodeteam.dogecv.filters.HSVRangeFilter;
 import com.disnodeteam.dogecv.filters.LeviColorFilter;
@@ -294,3 +297,6 @@ public class SamplingOrderDetector extends DogeCVDetector {
         return lastOrder;
     }
 }
+
+
+//if the robot fails, don't

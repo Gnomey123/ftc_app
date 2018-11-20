@@ -15,7 +15,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 @Autonomous
 public class PseudoCrater extends LinearOpMode {
 
-    ErnieHardware robot = new ErnieHardware();
+    ErnieHardware ernie = new ErnieHardware();
 
     private GoldAlignDetector detector;
 
@@ -28,7 +28,7 @@ public class PseudoCrater extends LinearOpMode {
     @Override
     public void runOpMode() {
 
-        robot.init(hardwareMap);
+        ernie.init(hardwareMap);
         detector = new GoldAlignDetector();
         detector.init(hardwareMap.appContext, CameraViewDisplay.getInstance());
         detector.useDefaults();
@@ -46,24 +46,26 @@ public class PseudoCrater extends LinearOpMode {
         detector.ratioScorer.perfectRatio = 1.0;
 
         detector.enable();
+<<<<<<< HEAD:TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutoPseudoCode.java
+        //HelloWorld world1 = new
+
+    }
+=======
+>>>>>>> da1029d9ca620d22ef9daf5f4bcf03710161bec8:TeamCode/src/main/java/org/firstinspires/ftc/teamcode/PseudoCrater.java
 
         waitForStart();
 
         Unlatch();
-
         while (!detector.getAligned()) {
             if (detector.alignPosOffset < 0) {
-                robot.leftDrive.setPower(-1);
-                robot.leftDrive.setPower(1);
+                ernie.leftDrive.setPower(-1);
+                ernie.leftDrive.setPower(1);
             } else if (detector.alignPosOffset > 0) {
-                robot.leftDrive.setPower(1);
-                robot.leftDrive.setPower(-1);
+                ernie.leftDrive.setPower(1);
+                ernie.leftDrive.setPower(-1);
             }
+            drive(12, 1);
         }
-
-        drive(12, 1);
-
-
     }
 
 
@@ -76,24 +78,24 @@ public class PseudoCrater extends LinearOpMode {
         int TICKS;
         TICKS = (int)(INCHES * TICKS_PER_INCH); //Might need to set INCHES to negative since that's what it was with last year's drivetrain
 
-        robot.leftDrive.setTargetPosition(robot.leftDrive.getCurrentPosition() + TICKS);
-        robot.rightDrive.setTargetPosition(robot.leftDrive.getCurrentPosition() + TICKS);
+        ernie.leftDrive.setTargetPosition(ernie.leftDrive.getCurrentPosition() + TICKS);
+        ernie.rightDrive.setTargetPosition(ernie.leftDrive.getCurrentPosition() + TICKS);
 
-        robot.leftDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        robot.rightDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        ernie.leftDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        ernie.rightDrive.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-        robot.leftDrive.setPower(POWER);
-        robot.rightDrive.setPower(POWER);
+        ernie.leftDrive.setPower(POWER);
+        ernie.rightDrive.setPower(POWER);
 
-        while(robot.leftDrive.isBusy() && robot.rightDrive.isBusy()){
+        while(ernie.leftDrive.isBusy() && ernie.rightDrive.isBusy()){
 
         }
 
-        robot.leftDrive.setPower(0);
-        robot.rightDrive.setPower(0);
+        ernie.leftDrive.setPower(0);
+        ernie.rightDrive.setPower(0);
 
-        robot.leftDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        robot.rightDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        ernie.leftDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        ernie.rightDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
 
 }
