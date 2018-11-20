@@ -4,16 +4,22 @@
           package="com.qualcomm.ftcrobotcontroller"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d8cbe0665a2e8fd87f054087b7224c0458d5eca8
           android:versionCode="31"
           android:versionName="4.3">
 =======
           android:versionCode="28"
           android:versionName="4.0">
 >>>>>>> parent of 58d723a... v4.1 changes.
+<<<<<<< HEAD
 =======
           android:versionCode="28"
           android:versionName="4.0">
 >>>>>>> parent of 58d723a... v4.1 changes.
+=======
+>>>>>>> d8cbe0665a2e8fd87f054087b7224c0458d5eca8
 
   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
